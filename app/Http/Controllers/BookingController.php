@@ -6,6 +6,7 @@ use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Room;
+use App\Models\Department;
 
 class BookingController extends Controller
 {
@@ -45,7 +46,8 @@ class BookingController extends Controller
 
     public function create($room)
     {
-        return view('/bookings/booking', compact('room'));
+        $departments = Department::all();
+        return view('/bookings/booking', compact('room', 'departments'));
     }
 
     public function store(Request $request)

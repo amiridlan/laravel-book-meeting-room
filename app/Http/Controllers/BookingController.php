@@ -55,19 +55,20 @@ class BookingController extends Controller
             'booking_date' => 'required|date',
             'booking_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i|after:start_time',
-            'meeting_room' => [
-                'required',
-                'string',
-                Rule::unique('bookings')->where(function ($query) use ($request) {
-                    return $query->where('booking_date', $request->booking_date)
-                        ->where('booking_time', $request->booking_time)
-                        ->where('end_time', $request->end_time);
-                }),
-            ],
-        ], [
-            'meeting_room.unique' => 'Bilik ini telah penuh pada tarikh dan masa ini. Sila cari tarikh dan masa lain.',
-
+            'meeting_room' => 'required|string',
         ]);
+
+        $overlappingBooking = Booking::where('booking_date', $request->booking_date)
+            ->where('meeting_room', $request->meeting_room)
+            ->where(function ($query) use ($request) {
+                $query->where('booking_time', '<', $request->end_time)
+                    ->where('end_time', '>', $request->booking_time);
+            })
+            ->exists();
+
+        if ($overlappingBooking) {
+            return redirect()->back()->withErrors(['meeting_room' => 'Bilik ini telah penuh pada tarikh dan masa ini. Sila cari tarikh dan masa lain.']);
+        }
 
         $data = $request->except('_token');
 

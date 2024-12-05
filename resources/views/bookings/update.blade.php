@@ -15,10 +15,10 @@
             <form class="px-1" action="{{ route('booking.update', $booking->id) }}" method="POST">
                 @csrf
                 @method('PUT')
-                <div class="mb-4 w-1/2">
+                <div class="mb-6">
                     <label for="department_name" class="block text-sm font-medium">Nama Jabatan</label>
                     <select name="department_name" id="department_name"
-                        class="mt-1 block w-full border-gray-300 rounded-md">
+                        class="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                         <option value="Jabatan Teknologi Maklumat"
                             {{ $booking->department_name == 'Jabatan Teknologi Maklumat' ? 'selected' : '' }}>Jabatan
                             Teknologi Maklumat</option>
@@ -66,25 +66,26 @@
                             Taman dan Landskap</option>
                     </select>
                 </div>
-                <div class="mb-4 w-1/2">
+                <div class="mb-6">
                     <label for="meeting_room" class="block text-sm font-medium">Bilik Mesyuarat</label>
                     <input type="text" name="meeting_room" id="meeting_room" value="{{ $booking->meeting_room }}"
-                        readonly class="mt-1 block w-full border-gray-300 rounded-md">
+                        readonly
+                        class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                 </div>
-                <div class="mb-4 w-1/2">
+                <div class="mb-6">
                     <label for="booking_date" class="block text-sm font-medium">Tarikh</label>
                     <input type="date" name="booking_date" id="booking_date" value="{{ $booking->booking_date }}"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                 </div>
-                <div class="mb-4 w-1/2">
-                    <label for="booking_time" class="block text-sm font-medium">Mula</label>
+                <div class="mb-6">
+                    <label for="booking_time" class="block text-sm font-medium">Masa Mula</label>
                     <input type="time" name="booking_time" id="booking_time" value="{{ $booking->booking_time }}"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                 </div>
-                <div class="mb-4 w-1/2">
+                <div class="mb-6">
                     <label for="end_time" class="block text-sm font-medium">Hingga</label>
                     <input type="time" name="end_time" id="end_time" value="{{ $booking->end_time }}"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                 </div>
                 <a href="{{ route('meeting.room', $booking->meeting_room) }}"
                     class="mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded">Kembali</a>

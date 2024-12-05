@@ -14,10 +14,18 @@
         <div class="container mx-auto mt-1">
             <form class="px-1" action="{{ route('booking.store') }}" method="POST">
                 @csrf
-                <div class="mb-4 w-1/2">
+
+                <div class="mb-6">
+                    <label for="meeting_room" class="block mb-2 text-sm font-medium">Bilik Mesyuarat</label>
+                    <input type="text" name="meeting_room" id="meeting_room" value="{{ $room }}" readonly
+                        class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        placeholder="" />
+                </div>
+
+                <div class="mb-6">
                     <label for="department_name" class="block text-sm font-medium">Jabatan</label>
                     <select name="department_name" id="department_name"
-                        class="mt-1 block w-full border-gray-300 rounded-md">
+                        class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                         <option value="Jabatan Teknologi Maklumat">Jabatan Teknologi Maklumat</option>
                         <option value="Jabatan Khidmat Pengurusan">Jabatan Khidmat Pengurusan</option>
                         <option value="Jabatan Perancangan Korporat">Jabatan Perancangan Korprorat</option>
@@ -36,25 +44,26 @@
                         <option value="Jabatan Taman dan Landskap">Jabatan Taman dan Landskap</option>
                     </select>
                 </div>
-                <div class="mb-4 w-1/2">
-                    <label for="meeting_room" class="block text-sm font-medium">Bilik Mesyuarat</label>
-                    <input type="text" name="meeting_room" id="meeting_room" value="{{ $room }}" readonly
-                        class="mt-1 block w-full border-gray-300 rounded-md">
-                </div>
-                <div class="mb-4 w-1/2">
-                    <label for="booking_date" class="block text-sm font-medium">Tarikh</label>
+
+                <div class="mb-6">
+                    <label for="booking_date" class="block mb-2 text-sm font-medium">Tarikh</label>
                     <input type="date" name="booking_date" id="booking_date"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        required />
                 </div>
-                <div class="mb-4 w-1/2">
-                    <label for="booking_time" class="block text-sm font-medium">Mula</label>
+
+                <div class="mb-6">
+                    <label for="booking_time" class="block mb-2 text-sm font-medium">Masa Mula</label>
                     <input type="time" name="booking_time" id="booking_time"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        required />
                 </div>
-                <div class="mb-4 w-1/2">
-                    <label for="end_time" class="block text-sm font-medium">Hingga</label>
+
+                <div class="mb-6">
+                    <label for="end_time" class="block mb-2 text-sm font-medium">Hingga</label>
                     <input type="time" name="end_time" id="end_time"
-                        class="mt-1 block w-full border-gray-300 rounded-md" required>
+                        class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        required />
                 </div>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Tempah</button>
             </form>

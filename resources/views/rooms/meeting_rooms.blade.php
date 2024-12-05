@@ -51,9 +51,10 @@
                 <tbody>
                     @foreach ($rooms as $room)
                         <tr>
-                            <x-table-style>{{ $room }}</x-table-style>
+                            <x-table-style>{{ $room->name }}</x-table-style>
                             <x-table-style>
-                                <a href="{{ route('meeting.room', $room) }}" class=" text-blue-600 font-bold">Lihat</a>
+                                <a href="{{ route('meeting.room', $room->name) }}"
+                                    class=" text-blue-600 font-bold">Lihat</a>
                             </x-table-style>
                         </tr>
                     @endforeach

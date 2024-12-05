@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\Room;
 
 class BookingController extends Controller
 {
@@ -27,7 +28,7 @@ class BookingController extends Controller
 
     public function showAll()
     {
-        $rooms = ['Dewan Mesyuarat', 'Gerakan', 'Seroja', 'Bunga Tanjung', 'Bakawali', 'Ixora', 'Tekoma', 'Orkid', 'Anggerik', 'Bunga Raya'];
+        $rooms = Room::all();
         return view('/rooms/meeting_rooms', compact('rooms'));
     }
 

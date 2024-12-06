@@ -50,7 +50,7 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <x-nav-link href="/" :active="request()->is('/')">Kalendar</x-nav-link>
                             <x-nav-link href="/meeting-rooms" :active="request()->is('meeting-rooms')">Bilik Mesyuarat</x-nav-link>
-                            <x-nav-link href="/contact" :active="request()->is('contact')">Extra</x-nav-link>
+                            {{-- <x-nav-link href="/contact" :active="request()->is('contact')">Extra</x-nav-link> --}}
                         </div>
                     </div>
                 </div>
@@ -81,8 +81,8 @@
                 <a href="/about"
                     class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Bilik
                     Mesyuarat</a>
-                <a href="contact"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Extra</a>
+                {{-- <a href="contact"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Extra</a> --}}
             </div>
         </div>
     </nav>

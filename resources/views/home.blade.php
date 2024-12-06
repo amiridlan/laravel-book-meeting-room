@@ -21,6 +21,8 @@
         </div>
 
         <script>
+            console.log(@json($bookings));
+
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
 
@@ -43,13 +45,53 @@
 
                     //Booking description
                     eventClick: function(info) {
-                        // Modal
-                        var description = info.event.extendedProps.description; // Get description
+                        // Get event details
+                        var date = info.event.start.toLocaleDateString();
+                        var department = info.event.extendedProps.department;
+                        var title = info.event.title;
+                        var start = info.event.start.toLocaleString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true
+                        });
+                        var end = info.event.end ? info.event.end.toLocaleString([], {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                hour12: true
+                            }) :
+                            'N/A';
+
+                        // Create a table for the modal
+                        var htmlContent = `
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Ditempah oleh</th>
+                <td style="border: 1px solid black; padding: 8px;">${department}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Bilik</th>
+                <td style="border: 1px solid black; padding: 8px;">${title}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Tarikh</th>
+                <td style="border: 1px solid black; padding: 8px;">${date}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Masa Mula</th>
+                <td style="border: 1px solid black; padding: 8px;">${start}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">Hingga</th>
+                <td style="border: 1px solid black; padding: 8px;">${end}</td>
+            </tr>
+        </table>
+    `;
+
+                        // Show the modal with the table
                         Swal.fire({
                             title: 'Maklumat Mesyuarat',
-                            html: description,
+                            html: htmlContent,
                             confirmButtonText: 'Tutup'
-                            // icon: 'info'
                         });
                     },
 

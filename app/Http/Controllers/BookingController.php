@@ -17,10 +17,7 @@ class BookingController extends Controller
                 'title' => $booking->meeting_room,
                 'start' => $booking->booking_date . 'T' . $booking->booking_time,
                 'end' => $booking->booking_date . 'T' . $booking->end_time,
-                'description' => $booking->department_name .
-                    "<br>Bilik: " . $booking->meeting_room .
-                    "<br>Mula: " . $booking->booking_time .
-                    "<br>Hingga: " . $booking->end_time,
+                'department' => $booking->department_name
             ];
         });
 

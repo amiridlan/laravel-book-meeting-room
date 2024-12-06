@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,8 @@
     <title>Mesyuarat</title>
 </head>
 
-<body class="h-full">
-    <nav class="bg-gray-800">
+<body class="flex flex-col h-screen m-0 p-0">
+    <nav class="bg-black">
         <div class="h-16 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -48,7 +48,7 @@
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <x-nav-link href="/" :active="request()->is('/')">Halaman Utama</x-nav-link>
+                            <x-nav-link href="/" :active="request()->is('/')">Kalendar</x-nav-link>
                             <x-nav-link href="/meeting-rooms" :active="request()->is('meeting-rooms')">Bilik Mesyuarat</x-nav-link>
                             <x-nav-link href="/contact" :active="request()->is('contact')">Extra</x-nav-link>
                         </div>
@@ -93,19 +93,14 @@
         </div>
     </header>
 
-    <main>
-        <div class="mx-auto max-w-7xl py-4 sm:px-6 lg:px-8">
+    <main class="flex-1 overflow-y-auto pb-16">
+        <div class="mx-auto max-w-7xl py-4 sm:px-6 lg:px-8 ">
             {{ $slot }}
         </div>
     </main>
-
-
-
-
-
 </body>
 
-<footer class="fixed bottom-0 left-0 z-20 w-full bg-gray-800 border-t border-gray-200 shadow p-4">
+<footer class="p-3 left-0 w-full bg-black border-gray-200 shadow">
     <span class="flex justify-center text-sm text-white">© 2024&nbsp; <a href="https://www.mbi.gov.my/"
             class="hover:underline"> Majlis Bandaraya Ipoh</a>. Hakcipta Terpelihara.
     </span>

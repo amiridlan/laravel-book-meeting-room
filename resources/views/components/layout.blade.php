@@ -87,13 +87,13 @@
         </div>
     </nav>
 
-    <header class=" bg-white shadow">
+    <header class=" bg-white shadow-lg">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex sm:justify-between">
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
         </div>
     </header>
 
-    <main class="flex-1 overflow-y-auto pb-16">
+    <main class="flex-1 overflow-y-auto pb-16 bg-zinc-50">
         <div class="mx-auto max-w-7xl py-4 sm:px-6 lg:px-8 ">
             {{ $slot }}
         </div>

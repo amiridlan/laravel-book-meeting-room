@@ -15,20 +15,20 @@
             <table class="w-3/4 mx-auto">
                 <thead>
                     <tr>
-                        <th class=" px-4 py-2">Jabatan</th>
                         <th class=" px-4 py-2">Tarikh</th>
                         <th class=" px-4 py-2">Mula</th>
-                        <th class=" px-4 py-2">Hingga</th>
+                        <th class=" px-4 py-2">Habis</th>
+                        <th class=" px-4 py-2">Jabatan</th>
                         <th class=" px-4 py-2"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($bookings as $booking)
                         <tr>
-                            <x-table-style>{{ $booking->department_name }}</x-table-style>
                             <x-table-style>{{ $booking->booking_date }}</x-table-style>
                             <x-table-style>{{ $booking->booking_time }}</x-table-style>
                             <x-table-style>{{ $booking->end_time }}</x-table-style>
+                            <x-table-style>{{ $booking->department_name }}</x-table-style>
                             <x-table-style>
                                 <a href="{{ route('booking.edit', $booking->id) }}"
                                     class="text-blue-500 hover:text-blue-800">Edit</a>

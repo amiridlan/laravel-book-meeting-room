@@ -40,12 +40,12 @@
             </div>
         @endif
 
-        <div class="container mx-auto mt-4 px-8">
+        <div class="container mx-auto px-8">
             <table class="w-3/4 mx-auto">
                 <thead>
                     <tr>
-                        <th class=" px-4 pb-2">Bilik / Dewan</th>
-                        <th class=" px-4 pb-2"></th>
+                        <th class=" px-4 pb-1">Bilik / Dewan</th>
+                        <th class=" px-4 pb-1"></th>
                     </tr>
                 </thead>
                 <tbody>

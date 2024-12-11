@@ -37,9 +37,17 @@
                         timeGrid: {
                             slotMinTime: '08:00:00', // Start time
                             slotMaxTime: '20:00:00', // End time
+
                         }
                     },
-                    events: @json($bookings), // Data here
+                    events: @json($bookings),
+                    eventColor: '#378006',
+
+                    eventContent: function(arg) {
+                        return {
+                            html: `<div class="bg-green-500 text-white p-2 rounded shadow">${arg.event.title}</div>`
+                        };
+                    },
 
                     aspectRatio: 1.9,
 

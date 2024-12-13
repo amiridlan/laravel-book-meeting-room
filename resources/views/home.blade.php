@@ -45,7 +45,7 @@
 
                     eventContent: function(arg) {
                         return {
-                            html: `<div class="bg-green-500 text-white p-2 rounded shadow">${arg.event.title}</div>`
+                            html: `<div class="bg-green-500 text-white p-1 rounded shadow w-full">${arg.event.title}</div>`
                         };
                     },
 

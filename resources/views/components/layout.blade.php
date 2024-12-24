@@ -49,7 +49,7 @@
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <x-nav-link href="/" :active="request()->is('/')">Kalendar</x-nav-link>
-                            <x-nav-link href="/meeting-rooms" :active="request()->is('meeting-rooms')">Bilik Mesyuarat</x-nav-link>
+                            <x-nav-link href="/meeting-rooms" :active="request()->is('meeting-rooms')">Tempah Bilik Mesyuarat</x-nav-link>
                             {{-- <x-nav-link href="/contact" :active="request()->is('contact')">Extra</x-nav-link> --}}
                         </div>
                     </div>

@@ -18,7 +18,7 @@ class RegisteredUserController extends Controller
     {
         // validate
         $validatedAttributes = request()->validate([
-            'fullName' => ['required'],
+            'name' => ['required'],
             'email' => ['required', 'email', 'max:254'],
             'password' => ['required', Password::min(5), 'confirmed'],
         ]);
@@ -27,6 +27,6 @@ class RegisteredUserController extends Controller
         // log in
         Auth::login($user);
         // redirect
-        return redirect('/jobs');
+        return redirect('/');
     }
 }

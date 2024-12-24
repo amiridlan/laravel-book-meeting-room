@@ -29,7 +29,7 @@ class SessionController extends Controller
         // regenerate session token
         request()->session()->regenerate(); // prevent Session Hijacking
         // redirect
-        return redirect('/jobs');
+        return redirect('/');
     }
 
     public function destroy()

@@ -15,7 +15,7 @@
 
 ## URL
 
-Demo: http://localhost:8000/
+Demo: http://localhost:8000/ </br>
 Database: http://localhost:8080/phpmyadmin/ (check XAMPP port first)
 
 ## License

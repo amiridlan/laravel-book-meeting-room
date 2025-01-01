@@ -21,4 +21,3 @@ Database: http://localhost:8080/phpmyadmin/ (check XAMPP port first)
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-https://www.blackbox.ai/share/40cd1592-d96f-49f8-9daa-8ef0890cb19d

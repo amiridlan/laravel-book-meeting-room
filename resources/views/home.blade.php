@@ -17,9 +17,9 @@
     <body>
         <div class="container mx-auto mt-5 px-8 pb-14">
             <div id='calendar'></div>
-
         </div>
 
+        {{-- JAVASCRIPT untuk fullCalendar.js --}}
         <script>
             console.log(@json($bookings));
 

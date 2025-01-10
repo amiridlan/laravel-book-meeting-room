@@ -99,7 +99,10 @@
                         Swal.fire({
                             title: 'Maklumat Mesyuarat',
                             html: htmlContent,
-                            confirmButtonText: 'Tutup'
+                            confirmButtonText: 'Tutup',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeIn'
+                            }
                         });
                     },
 

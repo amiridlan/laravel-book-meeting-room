@@ -19,8 +19,8 @@
             @endphp
 
             @foreach ($groupedBookings as $date => $bookings)
-                <h2 class="text-lg font-bold mt-2">{{ \Carbon\Carbon::parse($date)->translatedFormat('d/m/Y (l)') }}</h2>
-                <table class="w-3/4 mx-auto mt-2">
+                <h2 class="text-lg font-bold">{{ \Carbon\Carbon::parse($date)->translatedFormat('d/m/Y (l)') }}</h2>
+                <table class="w-3/4 mx-auto mb-12">
                     <thead>
                         <tr>
                             <th class="px-4 py-2">Mula</th>
@@ -54,9 +54,9 @@
             @endforeach
 
             <a href="{{ route('meeting.rooms') }}"
-                class="mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded">Kembali</a>
+                class="inline-block bg-red-500 text-white px-4 py-2 rounded">Kembali</a>
             <a href="{{ route('booking.create', $room) }}"
-                class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded">Tempah Bilik Ini</a>
+                class="inline-block bg-blue-500 text-white px-4 py-2 rounded">Tempah Bilik Ini</a>
         </div>
     </body>
 

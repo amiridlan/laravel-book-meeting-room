@@ -23,8 +23,7 @@ class SessionController extends Controller
         // attempt login
         if (! Auth::attempt($validatedAttributes)) {
             throw ValidationException::withMessages([
-                'no_pekerja' => 'Incorrect',
-                'password' => 'Incorrect'
+                'no_pekerja' => 'Incorrect'
             ]);
         }
         // regenerate session token

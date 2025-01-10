@@ -11,8 +11,8 @@
 
 <body class="flex flex-col h-screen m-0 p-0">
     <nav class="bg-black">
-        <div class="h-16 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="relative flex h-16 items-center justify-between">
+        <div class="h-20 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-20 items-center justify-between">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <!-- Mobile menu button-->
                     <button type="button"
@@ -43,7 +43,7 @@
                 </div>
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex flex-shrink-0 items-center">
-                        <img class="h-8 w-auto" src="{{ asset('assets/images/mbi-logo.svg') }}" alt="Your Company">
+                        <img class="h-12 w-auto" src="{{ asset('assets/images/mbi-logo.svg') }}" alt="Your Company">
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
@@ -57,14 +57,14 @@
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <div class="ml-4 flex items-center md:ml-6">
                         @guest
-                            <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
-                            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                            <x-nav-link href="/login" :active="request()->is('login')">Log Masuk</x-nav-link>
+                            <x-nav-link href="/register" :active="request()->is('register')">Daftar</x-nav-link>
                         @endguest
 
                         @auth
                             <form method="POST" action="/logout">
                                 @csrf
-                                <x-form-button> Log Out </x-form-button>
+                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Log Keluar</button>
                             </form>
                         @endauth
                     </div>
@@ -79,7 +79,7 @@
                 <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
                     aria-current="page">Kalendar</a>
                 <a href="/about"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Bilik
+                    class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-gray-300">Bilik
                     Mesyuarat</a>
                 {{-- <a href="contact"
                     class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Extra</a> --}}

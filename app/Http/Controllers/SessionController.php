@@ -17,12 +17,13 @@ class SessionController extends Controller
     {
         // validate
         $validatedAttributes = request()->validate([
-            'email' => ['required', 'email'],
+            'no_pekerja' => ['required'],
             'password' => ['required']
         ]);
         // attempt login
         if (! Auth::attempt($validatedAttributes)) {
             throw ValidationException::withMessages([
+                'no_pekerja' => 'Incorrect',
                 'email' => 'Incorrect'
             ]);
         }

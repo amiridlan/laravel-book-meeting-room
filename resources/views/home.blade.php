@@ -95,7 +95,7 @@
         </table>
     `;
 
-                        // Show the modal with the table
+                        // MODAL sweetalert untuk description setiap meeting
                         Swal.fire({
                             title: 'Maklumat Mesyuarat',
                             html: htmlContent,
@@ -106,7 +106,7 @@
                         });
                     },
 
-                    //Change cursor to pointer
+                    //Ubah cursor
                     eventMouseEnter: function(info) {
                         info.el.style.cursor = 'pointer';
                     },
